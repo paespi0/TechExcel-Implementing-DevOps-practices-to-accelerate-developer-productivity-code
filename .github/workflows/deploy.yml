@@ -1,7 +1,8 @@
 name: Manual Deployment
 on:
         workflow_dispatch
-
+env:
+        targetEnv: dev
 jobs:
         deploy:
                 runs-on: ubuntu-latest
