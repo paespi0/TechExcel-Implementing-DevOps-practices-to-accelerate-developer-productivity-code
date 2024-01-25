@@ -1,8 +1,10 @@
 name: Manual Deployment
 on:
-  workflow_dispatch:
+  workflow_dispatch
+  
 env:
   targetEnv: dev
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -17,8 +19,6 @@ jobs:
           tenant-id: ${{ secrets.TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           enable-AzPSSession: true
-          auth-type: id-token
-          write-permissions: true
 
       - name: Deploy ARM Template
         uses: Azure/arm-deploy@v1
